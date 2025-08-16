@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% extends 'users/userbase.html'%}
+{% block contents %}
+<html>
+<head>
+    <title>Predict AQI Bucket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e3e3e3;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Predict AQI Bucket</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="pm25">PM2.5:</label>
+        <input type="text" id="pm25" name="pm25" required><br>
+        
+        <label for="pm10">PM10:</label>
+        <input type="text" id="pm10" name="pm10" required><br>
+        
+        <label for="no">NO:</label>
+        <input type="text" id="no" name="no" required><br>
+        
+        <label for="no2">NO2:</label>
+        <input type="text" id="no2" name="no2" required><br>
+        
+        <label for="nox">NOx:</label>
+        <input type="text" id="nox" name="nox" required><br>
+        
+        <label for="nh3">NH3:</label>
+        <input type="text" id="nh3" name="nh3" required><br>
+        
+        <label for="co">CO:</label>
+        <input type="text" id="co" name="co" required><br>
+        
+        <label for="so2">SO2:</label>
+        <input type="text" id="so2" name="so2" required><br>
+        
+        <label for="o3">O3:</label>
+        <input type="text" id="o3" name="o3" required><br>
+        
+        <button type="submit">Predict AQI Bucket</button>
+    </form>
+    {% if predicted_bucket %}
+    <h2>Prediction Result:</h2>
+    <p>Predicted AQI Bucket: {{ predicted_bucket }}</p>
+    <p>MSE on Training Data: {{ mse }}</p>
+    {% endif %}
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends 'users/userbase.html' %}
+{% block contents %}
+<h1>Air Quality Pair Plots</h1>
+<img src="data:image/png;base64,{{ graph }}" alt="Pair Plot" style="width:100%;">
+{% endblock %}

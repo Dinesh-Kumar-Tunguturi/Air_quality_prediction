@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends 'users/userbase.html'%}
+{% block contents %}
+<html>
+<head>
+    <title>Metrics for decision tree </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #0055a5;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h1.metric-heading {
+            font-size: 28px;
+            margin-top: 30px;
+            color: #333;
+            text-align: center;
+        }
+
+        div.metrics-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        div.metric {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 400px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Metrics for decision tree</h1>
+    <h2>Decision Tree Classification Results</h2>
+<p><strong>Accuracy:</strong> {{ accuracy }}</p>
+<p><strong>Precision:</strong> {{ precision }}</p>
+<p><strong>Recall:</strong> {{ recall }}</p>
+<p><strong>F1 Score:</strong> {{ f1_score }}</p>
+
+<h3>Decision Tree Visualization</h3>
+<img src="data:image/png;base64,{{ graph }}" alt="Decision Tree">
+
+</body>
+</html>
+{% endblock %}

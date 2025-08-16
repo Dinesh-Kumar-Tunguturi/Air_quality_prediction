@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% extends 'users/userbase.html'%}
+{% block contents %}
+<html>
+<head>
+    <title>Metrics for linear regressor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #0055a5;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h1.metric-heading {
+            font-size: 28px;
+            margin-top: 30px;
+            color: #333;
+            text-align: center;
+        }
+
+        div.metrics-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        div.metric {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 400px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Metrics for linear regressor</h1>
+    <div class="metrics-container">
+        <div class="metric">
+            <h1 class="metric-heading">Mean Absolute Error (MAE)</h1>
+            <p>{{ mae }}</p>
+        </div>
+        <div class="metric">
+            <h1 class="metric-heading">Mean Squared Error (MSE)</h1>
+            <p>{{ mse }}</p>
+        </div>
+        <div class="metric">
+            <h1 class="metric-heading">Root Mean Squared Error (RMSE)</h1>
+            <p>{{ rmse }}</p>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

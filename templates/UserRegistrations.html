@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Dewi Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+<body style="background-image: url('https://purple-cdn.web-apps-prod.wo-cloud.com/purple/0f7a645f-e3c1-4a9c-a6dd-ccfa5dff68a7/ccaeda65-166e-49c6-bbcd-ece973f0339c/d4b7837a-bb42-4868-8fbb-93adeab17989/956be729-b0b0-458c-ad38-29bce1f8e38d.jpg'); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h3 class="logo">Air Quality Prediction based on Machine Learning</h3>
+
+    <nav id="navbar" class="navbar" style="color: black;">
+      <ul>
+        <li><a class="nav-link scrollto active" href="{% url 'index' %}" style="color: black;">Home</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'login' %}" style="color: black;">User</a></li>
+        <!-- Optional: if AdminLogin exists, else remove the line below -->
+        <li><a class="nav-link scrollto" href="{% url 'AdminLogin' %}" style="color: black;">Admin</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'user_register' %}" style="color: black;">Register</a></li>
+      </ul>
+      <!-- <i class="bi bi-list mobile-nav-toggle"></i> -->
+    </nav>
+  </div>
+</header>
+<section style="
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    margin-top: 120px;
+">
+  <!-- <div class="container py-5">
+    <div class="row text-center py-3">
+      <div class="col-lg-12">
+        <h1 class="h3" style="color: rgb(255, 255, 255); font-weight: bold;">User Login Form</h1>
+      </div>
+    </div> -->
+    <section class="vh-100 d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card p-4" style="
+          background-color: rgba(255, 255, 255, 0.25);
+          border-radius: 30px;
+          border: none;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          color: #000;
+        ">
+          <form action="{% url 'user_register' %}" method="POST">
+            <h1 class="h3 text-center mb-4" style="color: rgb(80, 127, 255); font-weight: bold;">User Register Form</h1>
+            {% csrf_token %}
+
+<tr><td></td>
+                            <td>User Name</td>
+                            <td >{{form.name}}</td>
+                        </tr>
+                        <tr><td></td><br>    
+                            <td>Login ID </td>
+                            <td>{{form.loginid}}</td>
+                        </tr>
+                        <tr><td></td><br>
+
+                            
+                            <td>Password</td>
+                            <td>{{form.password}}</td>
+                        </tr>
+                        <tr><td></td><br>
+                            <td>Mobile</td>
+                            <td>{{form.mobile}}</td>
+                        </tr>
+                        <tr><td></td><br>
+                            <td>email</td>
+                            <td>{{form.email}}</td>
+                        </tr>
+                        <tr><td></td><br>
+                            <td>Locality</td>
+                            <td>{{form.locality}}</td>
+                        </tr>
+                        <tr><td></td><br>
+                            <td>Address</td>
+                            <td>{{form.address}}</td>
+                        </tr>
+                        <tr><td></td><br>
+                            <td>City</td>
+                            <td>{{form.city}}</td>
+                        </tr>
+                        <tr><td></td><br>
+                            <td>State</td>
+                            <td>{{form.state}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td></td><br>
+                            <td>{{form.status}}</td>
+                        </tr>
+ <tr><td></td>
+                            <td></td><br><br>
+
+            <div class="text-center">
+              <button class="btn btn-primary px-5 py-2" type="submit">Register</button>
+            </div>
+
+            {% if messages %}
+              <div class="text-center mt-3">
+                {% for message in messages %}
+                  <p class="text-danger">{{ message }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        </div>
+    </section>

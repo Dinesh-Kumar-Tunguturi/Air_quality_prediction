@@ -1,0 +1,94 @@
+| **Pollutant** | **Min** | **Max** | **Mean** | **Std Dev** | **Unit** |
+| ------------- | ------- | ------- | -------- | ----------- | -------- |
+| PM2.5         | 0.04    | 949.99  | 67.45    | 59.41       | µg/m³    |
+| PM10          | 0.01    | 1000.00 | 118.12   | 71.50       | µg/m³    |
+| NO            | 0.02    | 390.68  | 17.57    | 21.35       | µg/m³    |
+| NO2           | 0.01    | 362.21  | 28.56    | 22.94       | µg/m³    |
+| NOx           | 0.00    | 467.63  | 32.30    | 29.31       | µg/m³    |
+| NH3           | 0.01    | 352.89  | 23.48    | 20.71       | µg/m³    |
+| CO            | 0.00    | 175.81  | 2.25     | 6.71        | mg/m³    |
+| SO2           | 0.01    | 193.86  | 14.53    | 16.91       | µg/m³    |
+| O3            | 0.01    | 257.73  | 34.49    | 20.16       | µg/m³    |
+
+| **Pollutant** | **Min** | **Max** | **Mean**    | **Std Dev** | **Unit** |
+| ------------- | ------- | ------- | --------    | ----------- | -------- |
+| PM2.5         | 1.000   | 949.99  | 67.45       | 59.41       | µg/m³    |
+| PM10          | 1.000   | 1000.00 | 118.12      | 71.50       | µg/m³    |
+| NO            | 1.000   | 390.68  | 17.57       | 21.35       | µg/m³    |
+| NO2           | 1.000   | 362.21  | 28.56       | 22.94       | µg/m³    |
+| NOx           | 1.000   | 467.63  | 32.30       | 29.31       | µg/m³    |
+| NH3           | 1.000   | 352.89  | 23.48       | 20.71       | µg/m³    |
+| CO            | 1.000   | 175.81  | 2.25        | 6.71        | mg/m³    |
+| SO2           | 1.000   | 193.86  | 14.53       | 16.91       | µg/m³    |
+| O3            | 1.000   | 257.73  | 34.49       | 20.16       | µg/m³    |
+
+                very poor   Severe   satisfactory    good
+
+
+
+
+| Abbreviation | Full Form / Description                       |
+| ------------ | --------------------------------------------- |
+| **PM2.5**    | Particulate Matter less than 2.5 micrometers  |   Particulate Matter (PM) – Small pieces of dust, dirt, soot, smoke, or liquid drops in the air.
+| **PM10**     | Particulate Matter less than 10 micrometers   |
+| **NO**       | Nitric Oxide                                  |   NO - A colorless gas released during burning (especially fuel).
+| **NO2**      | Nitrogen Dioxide                              |   NO2 - After NO mixes with air, it forms NO2
+| **NOx**      | Nitrogen Oxides (combined NO + NO2 + others)  |   NOx - Group of nitrogen gases (NO + NO2)
+| **NH3**      | Ammonia                                       |   NH3 - A gas with a strong smell. Smell from cow sheds or toilet cleaners.
+| **CO**       | Carbon Monoxide                               |   CO - gas with no smell or color.
+| **SO2**      | Sulfur Dioxide                                |   SO2 - A sharp-smelling gas from burning coal or oil.
+| **O3**       | Ozone                                         |   O3 - A gas made when sunlight reacts with other pollutants
+| **Benzene**  | Benzene (C₆H₆ – a volatile organic compound)  |   
+| **Toluene**  | Toluene (C₇H₈ – a volatile organic solvent)   |
+| **Xylene**   | Xylene (a group of three benzene derivatives) |
+| **AQI**      | Air Quality Index                             |
+
+
+AQI - index ranges
+
+0–50 → Good
+
+100–200 → Unhealthy
+
+300+ → Dangerous
+
+
+*********************
+these are most important values 
+
+PM2.5
+
+PM10
+
+NO2
+
+CO
+
+because they directly deal with air
+*****************
+
+
+| Testing Type            | What It Checks                       | Example from Your Project                |
+| ----------------------- | ------------------------------------ | ---------------------------------------- |
+| **Unit Testing**        | One small part (like a function)     | Test only the `predict()` function       |
+| **Integration Testing** | Connection between parts             | Form → Prediction → Display              |
+| **System Testing**      | Entire app functionality             | Login, predict, view logs                |
+| **Acceptance Testing**  | Final check if it meets expectations | Reviewer's or guide’s demo test          |
+| **Regression Testing**  | After changes, test old features     | Adding a feature → Rechecking everything |
+
+white box testing - the testing that we can see code and tests the code or functions and parameters
+black box testing - the testing are done without knowing the actual code i.e., we can test the outputs by inputs or interactions or integrations or verifying logins and signins
+
+
+uml diagrams
+
+| Diagram Type           | What it shows                   | Use in your project                              |
+| ---------------------- | ------------------------------- | ------------------------------------------------ |
+| **Class Diagram**      | Classes and their relationships | Backend/data model structure                     |
+| **Use Case Diagram**   | What the user can do            | Project features for user/admin                  |
+| **Sequence Diagram**   | Step-by-step function calling   | Flow of form submission to prediction            |
+| **Activity Diagram**   | Logical flow of operations      | How data moves from input to result              |
+| **Component Diagram**  | Modules/components in system    | Frontend, backend, ML, database                  |
+| **Deployment Diagram** | Hardware/server layout          | Django runs on server, user accesses via browser |
+
+

@@ -1,0 +1,48 @@
+{% extends 'users/userbase.html' %}
+{% block contents %}
+<div class="container mt-5">
+    <h2 class="mb-4">User Prediction Records</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Username</th>
+                    <th>Login Time</th>
+                    <th>PM2.5</th>
+                    <th>PM10</th>
+                    <th>NO</th>
+                    <th>NO2</th>
+                    <th>NH3</th>
+                    <th>CO</th>
+                    <th>SO2</th>
+                    <th>O3</th>
+                    <th>Predicted Result</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.username }}</td>
+                    <td>{{ record.login_time }}</td>
+                    <td>{{ record.pm25 }}</td>
+                    <td>{{ record.pm10 }}</td>
+                    <td>{{ record.no }}</td>
+                    <td>{{ record.no2 }}</td>
+                    <td>{{ record.nh3 }}</td>
+                    <td>{{ record.co }}</td>
+                    <td>{{ record.so2 }}</td>
+                    <td>{{ record.o3 }}</td>
+                    <td>{{ record.predicted_result }}</td>
+                    <td>{{ record.timestamp }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="12" class="text-center">No records found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

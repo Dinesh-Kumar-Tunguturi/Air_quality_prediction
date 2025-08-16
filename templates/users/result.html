@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% extends 'users/userbase.html'%}
+{% block contents %}
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 10;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-color: #fff;
+            border-bottom: 1px solid #e3e3e3;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+    
+        .result-item {
+            margin-bottom: 15px;
+        }
+
+        .result-item label {
+            font-weight: bold;
+        }
+
+        .result-item p {
+            margin: 5px 0;
+        }
+
+        .btn-back {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="container">
+        {% if predicted_bucket %}
+        <h2>Prediction Result:</h2>
+        <div class="result-item">
+            <label>Predicted AQI Bucket:</label>
+            <p> Air quality is {{ predicted_bucket }}</p>
+            <label>Accuracy:</label>
+            <p> Accuracy is {{ accuracy }}</p>
+            <!-- <label>Model Evaluation</label>
+            <p> Accuracy (Overall Performance): {{ accuracy }}</p>
+            <label> Classification Report:</label>
+            <p> Precision, Recall, F1-Score</p> -->
+        </div>
+        <!-- <div class="result-item">
+            <label>MSE on Training Data:</label>
+            <p>{{ mse_train }}</p>
+        </div>
+        <div class="result-item">
+            <label>MSE on Test Data:</label>
+            <p>{{ mse_test }}</p>
+        </div> -->      
+        {% endif %}
+        <a href="{% url 'predict' %}" class="btn-back">Back to Prediction Form</a>
+    </div>
+</body>
+</html>
+{% endblock %}
